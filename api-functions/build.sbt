@@ -14,6 +14,14 @@ libraryDependencies ++= Seq(
   "com.amazonaws" % "aws-lambda-java-core" % "1.2.0"
 )
 
+val circeVersion = "0.9.3"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
 scalacOptions ++= Seq(
   "-unchecked",
   "-deprecation",
