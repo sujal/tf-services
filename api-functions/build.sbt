@@ -5,7 +5,7 @@ import sbtrelease.Version
 name := "timefades-api"
 
 resolvers += Resolver.sonatypeRepo("public")
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.8"
 releaseNextVersion := { ver => Version(ver).map(_.bumpMinor.string).getOrElse("Error") }
 assemblyJarName in assembly := "timefades-api-functions.jar"
 
@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
   "com.amazonaws" % "aws-lambda-java-core" % "1.2.0"
 )
 
-val circeVersion = "0.9.3"
+val circeVersion = "0.10.0"
 
 libraryDependencies ++= Seq(
   "io.circe" %% "circe-core",
