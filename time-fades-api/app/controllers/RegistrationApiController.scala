@@ -5,12 +5,16 @@ package controllers
 
 import javax.inject.{Inject, Singleton}
 import play.api.mvc.{AbstractController, ControllerComponents}
+import auth.AuthAction
 
 @Singleton
-class RegistrationApiController @Inject()(components: ControllerComponents) extends AbstractController(components) {
+class RegistrationApiController @Inject()(
+    components: ControllerComponents,
+    authAction: AuthAction
+  ) extends AbstractController(components) {
 
-    def ping = Action { implicit request => 
-        Ok("Hello World!\n\n")
-    }
+  def ping = authAction { implicit request => 
+    Ok("Hello World!\n\n")
+  }
 
 }
